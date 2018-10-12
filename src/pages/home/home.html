@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Student Data
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label stacked> What is your first name?</ion-label>
+    <ion-input [(ngModel)]="developer.firstName"></ion-input>
+  </ion-item>
+ 
+  <ion-item>
+   <ion-label stacked> What is your last name?</ion-label>
+   <ion-input [(ngModel)]="developer.lastName"></ion-input>
+ </ion-item>
+ 
+ <ion-item>
+   <ion-label stacked> What is your Student Number?</ion-label>
+   <ion-input [(ngModel)]="developer.stdID"></ion-input>
+ </ion-item>
+ 
+ <button ion-button full (click)="addDeveloper()">Add Developer</button>
+ 
+ <ion-list>
+   <ion-item *ngFor="let dev of developers">
+     <h2>{{dev.firstName}}</h2>
+     <h2>{{dev.lastName}}</h2>
+     <p>{{dev.stdID}}</p>
+   </ion-item>
+ </ion-list>
+
+</ion-content>
